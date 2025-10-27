@@ -5,7 +5,7 @@ class ChatroomChannel < ApplicationCable::Channel
 
   def speak(data)
     ActionCable.server.broadcast("chat_broadcast", { 
-      content: data["message"], 
+      content: data["content"], 
       user: data["user"]
     })
   end
